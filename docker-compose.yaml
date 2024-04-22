@@ -154,5 +154,14 @@ services:
       - api
       - web
     ports:
-      - "80:80"
+      - "8082:80"
       #- "443:443"
+
+
+  wordpress:
+    image: soulteary/wp-api:6.5.2-sqlite
+    restart: always
+    ports:
+      - 8083:80
+    volumes:
+      - ./wordpress:/var/www/html
